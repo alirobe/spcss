@@ -1,0 +1,34 @@
+{
+  "name": "spcss",
+  "version": "0.0.1",
+  "description": "Analyses SharePoint 2010, 2013, and SharePoint Online CSS files; and creates .sass files with pseudo-classes, for easy branding.",
+  "main": "index.js",
+  "dependencies": {
+    "css": "^2.2.1",
+    "gulp": "^3.9.1",
+    "node-fetch": "^1.6.3"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.0",
+    "through2": "^2.0.1"
+  },
+  "scripts": {
+    "test": "analyse"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alirobe/spcss.git"
+  },
+  "keywords": [
+    "css",
+    "sharepoint"
+  ],
+  "author": "Ali Robertson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alirobe/spcss/issues"
+  },
+  "homepage": "https://github.com/alirobe/spcss#readme"
+}
