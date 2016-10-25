@@ -10,9 +10,10 @@ let options = {
 };
 
 var myCssText = "";
+myCssText += fs.readFileSync('./tests/mock_data/sp2013/corev15.css', 'utf8') + '\n';
 myCssText += fs.readFileSync('./tests/mock_data/sp2013/controls15.css', 'utf8') + '\n';
 myCssText += fs.readFileSync('./tests/mock_data/sp2013/pagelayouts15.css', 'utf8') + '\n';
-myCssText += fs.readFileSync('./tests/mock_data/sp2013/corev15.css', 'utf8') + '\n';
+//myCssText = fs.readFileSync('./tests/mock_data/o365/themable-corev15.css', 'utf8');
 
 let myParsedCss = css.parse(myCssText);
 // rules must have declarations, must have comments that are 'valid' according to our validator function.
@@ -41,11 +42,11 @@ _(commentSets).forEach(function(val,key) {
     });
 });
 
-var ruleCssTemplate = _.template("${ selectors.join(',') } " + 
+var ruleCssTemplate = _.template("\n${ selectors.join(',') }\n" + 
 "{ @extend .${ rule } !optional }");
 
 var scss = "";
-_(newRules).forEach(r=>scss+="\n"+ruleCssTemplate(r));
+_(newRules).forEach(r=>scss+=ruleCssTemplate(r));
 fs.writeFile('./sb-generated.scss', scss);
 
 // ensures text in comment is a valid SharePoint 'parsed' comment
