@@ -86,4 +86,4 @@ $RECYCLE.BIN/
 
 #spcss
 tests/mock_data
-report.json
+sb-generated.scss
